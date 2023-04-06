@@ -1,5 +1,7 @@
+import 'package:atividade4poo/models/drinks.dart';
 import 'package:flutter/material.dart';
 import '/components/bottomnavbaritens.dart';
+import './models/drinks.dart';
 
 void main() {
   runApp(const TipsApp());
@@ -15,13 +17,17 @@ class TipsApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(),
+      home: MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
+  final _drinks = [
+    Drink(description: "La Fin Du Monde - Bock - 65 ibu"),
+    Drink(description: "Sapporo Premiume - Sour Ale - 54 ibu"),
+    Drink(description: "Duvel - Pilsner - 82 ibu"),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -32,17 +38,13 @@ class MyHomePage extends StatelessWidget {
       body: Container(
         alignment: Alignment.center,
         margin: EdgeInsets.all(100),
-        child: Column(children: [
-          Expanded(
-            child: Text("La Fin Du Monde - Bock - 65 ibu"),
-          ),
-          Expanded(
-            child: Text("Sapporo Premiume - Sour Ale - 54 ibu"),
-          ),
-          Expanded(
-            child: Text("Duvel - Pilsner - 82 ibu"),
-          )
-        ]),
+        child: Column(children:
+          _drinks.map((drink) {
+            return Expanded(
+              child: Text(drink.description),
+            );
+          }).toList()
+        )
       ),
       bottomNavigationBar: BottomNavbarItems(),
     );
