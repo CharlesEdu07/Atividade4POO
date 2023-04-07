@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './components/bottomnavbaritens.dart';
+import 'components/bottomNavbarItems.dart';
 import './components/listdrinks.dart';
 void main() {
   runApp(const TipsApp());
