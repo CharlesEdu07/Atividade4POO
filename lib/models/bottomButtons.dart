@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class BottomButtons {
-  final String title;
+  final String label;
   final Icon icon;
   
   BottomButtons({
-    required this.title,
+    required this.label,
     required this.icon,
   });
 }

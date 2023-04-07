@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'components/bottomNavbarItems.dart';
-import './components/listdrinks.dart';
+import './components/list_drinks.dart';
+import './components/bottom_navbar_items.dart';
 void main() {
   runApp(const TipsApp());
 }
