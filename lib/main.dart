@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import './models/drinks.dart';
 import './components/list_drinks.dart';
 import './components/bottom_navbar_items.dart';
+
 void main() {
   runApp(const TipsApp());
 }
@@ -21,6 +23,20 @@ class TipsApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
+  final _drinks = [
+    Drink(description: "La Fin Du Monde - Bock - 65 ibu"),
+    Drink(description: "Sapporo Premiume - Sour Ale - 54 ibu"),
+    Drink(description: "Duvel - Pilsner - 82 ibu"),
+  ];
+
+  final _icons = [
+    Icons.home,
+    Icons.search,
+    Icons.favorite,
+    Icons.person,
+    Icons.gamepad,
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,10 +46,10 @@ class MyHomePage extends StatelessWidget {
       body: Center(
         child: Container(
           margin: EdgeInsets.all(100),
-          child: ListDrinks(),
+          child: ListDrinks(drinks: _drinks),
         ),
       ),
-      bottomNavigationBar: BottomNavbarItems(),
+      bottomNavigationBar: BottomNavbarItems(icons: _icons),
     );
   }
 }

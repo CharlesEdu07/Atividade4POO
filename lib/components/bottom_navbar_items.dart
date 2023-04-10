@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 
 class BottomNavbarItems extends StatelessWidget {
-  final icons = [
-    Icons.home,
-    Icons.search,
-    Icons.add,
-    Icons.favorite,
-    Icons.person,
-  ];
+  final List icons;
+
+  BottomNavbarItems({required this.icons});
 
   void _onItemTapped(int index) {
     print("Tocaram no item $index");
