@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class BottomNavbarItems extends StatelessWidget {
-  final List icons;
+  final List buttons;
 
-  BottomNavbarItems({required this.icons});
+  BottomNavbarItems({required this.buttons});
 
   void _onItemTapped(int index) {
     print("Tocaram no item $index");
@@ -14,12 +14,14 @@ class BottomNavbarItems extends StatelessWidget {
     return BottomNavigationBar(
       onTap: _onItemTapped,
       type: BottomNavigationBarType.fixed,
-      items: icons.map((icon) {
-        return BottomNavigationBarItem(
-          icon: Icon(icon),
-          label: '',
-        );
-      }).toList(),
+      items: buttons
+          .map(
+            (button) => BottomNavigationBarItem(
+              icon: Icon(button["icon"]),
+              label: button["label"],
+            ),
+          )
+          .toList(),
     );
   }
 }

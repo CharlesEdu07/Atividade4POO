@@ -30,12 +30,12 @@ class MyHomePage extends StatelessWidget {
     Drink(description: "Budweiser - Lager - 41 ibu"),
   ];
 
-  final _icons = [
-    Icons.home,
-    Icons.search,
-    Icons.favorite,
-    Icons.person,
-    Icons.gamepad,
+  final _buttons = [
+    {"label": "Home", "icon": Icons.home},
+    {"label": "Search", "icon": Icons.search},
+    {"label": "Favorite", "icon": Icons.favorite},
+    {"label": "Profile", "icon": Icons.person},
+    {"label": "Settings", "icon": Icons.settings}
   ];
 
   @override
@@ -50,7 +50,7 @@ class MyHomePage extends StatelessWidget {
           child: ListDrinks(drinks: _drinks),
         ),
       ),
-      bottomNavigationBar: BottomNavbarItems(icons: _icons),
+      bottomNavigationBar: BottomNavbarItems(buttons: _buttons),
     );
   }
 }
