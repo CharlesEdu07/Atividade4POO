@@ -27,6 +27,7 @@ class MyHomePage extends StatelessWidget {
     Drink(description: "La Fin Du Monde - Bock - 65 ibu"),
     Drink(description: "Sapporo Premiume - Sour Ale - 54 ibu"),
     Drink(description: "Duvel - Pilsner - 82 ibu"),
+    Drink(description: "Budweiser - Lager - 41 ibu"),
   ];
 
   final _icons = [
