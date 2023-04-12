@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class ListDrinks extends StatelessWidget {
   final List drinks;
-  
+
   ListDrinks({required this.drinks});
 
   @override
