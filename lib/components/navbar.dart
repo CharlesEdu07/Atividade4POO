@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 class Navbar extends StatelessWidget {
   final Function changeColor;
+  Color appBarColor;
 
-  Navbar({required this.changeColor});
+  Navbar({required this.changeColor, required this.appBarColor});
 
   @override
   Widget build(BuildContext context) {
@@ -11,11 +12,11 @@ class Navbar extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[
-          const DrawerHeader(
+          DrawerHeader(
             decoration: BoxDecoration(
-              color: Colors.green,
+              color: appBarColor,
             ),
-            child: Text('Troque as cores do app',
+            child: const Text('Troque as cores do app',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 24,

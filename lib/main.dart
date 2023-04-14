@@ -16,7 +16,7 @@ class TipsApp extends StatelessWidget {
     return MaterialApp(
       title: 'Dicas',
       theme: ThemeData(
-        primarySwatch: Colors.green,
+        primarySwatch: Colors.blue,
       ),
       home: MyHomePage(),
     );
@@ -44,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
     {"label": "Settings", "icon": Icons.settings}
   ];
 
-  Color _appBarColor = Colors.green;
+  Color _appBarColor = Colors.blue;
 
   void _changeColor(Color color) {
     setState(() {
@@ -55,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Navbar(changeColor: _changeColor),
+      drawer: Navbar(changeColor: _changeColor, appBarColor: _appBarColor),
       appBar: AppBar(
         title: const Text('Dicas'),
         backgroundColor: _appBarColor,
