@@ -50,6 +50,81 @@ class _MyHomePageState extends State<MyHomePage> {
       "style": "Lager",
       "ibu": 41,
     },
+    {
+      "name": "Bud Light",
+      "style": "Lager",
+      "ibu": 41,
+    },
+    {
+      "name": "Bud Light Lime",
+      "style": "Lager",
+      "ibu": 41,
+    },
+    {
+      "name": "Bud Light Platinum",
+      "style": "Lager",
+      "ibu": 41,
+    },
+    {
+      "name": "Bud Light Seltzer",
+      "style": "Lager",
+      "ibu": 41,
+    },
+    {
+      "name": "Bud Light Seltzer Lemonade",
+      "style": "Lager",
+      "ibu": 41,
+    },
+    {
+      "name": "Bud Light Seltzer Orange",
+      "style": "Lager",
+      "ibu": 41,
+    },
+    {
+      "name": "Bud Light Seltzer Raspberry",
+      "style": "Lager",
+      "ibu": 41,
+    },
+    {
+      "name": "Bud Light Seltzer Strawberry",
+      "style": "Lager",
+      "ibu": 41,
+    },
+    {
+      "name": "Bud Light Seltzer Watermelon",
+      "style": "Lager",
+      "ibu": 41,
+    },
+    {
+      "name": "Bud Light Seltzer Black Cherry",
+      "style": "Lager",
+      "ibu": 41,
+    },
+    {
+      "name": "Bud Light Seltzer Black Cherry Lime",
+      "style": "Lager",
+      "ibu": 41,
+    },
+    {
+      "name": "Bud Light Seltzer Black Cherry Lime",
+      "style": "Lager",
+      "ibu": 41,
+    },
+    {
+      "name": "Bud Light Seltzer Black Cherry Lime",
+      "style": "Lager",
+      "ibu": 41,
+    },
+    {
+      "name": "Bud Light Seltzer Black Cherry Lime",
+      "style": "Lager",
+      "ibu": 41,
+    },
+    {
+      "name": "Bud Light Seltzer Black Cherry Lime",
+      "style": "Lager",
+      "ibu": 41,
+    },
   ];
 
   final _buttons = [
