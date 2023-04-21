@@ -30,7 +30,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final _drinks = [
+  final List<Map<String, Object>> _drinks = [
     {
       "name": "La Fin Du Monde",
       "style": "Bock",
@@ -57,76 +57,61 @@ class _MyHomePageState extends State<MyHomePage> {
       "ibu": 41,
     },
     {
-      "name": "Bud Light Lime",
-      "style": "Lager",
-      "ibu": 41,
+      "name": "IPA",
+      "style": "India Pale Ale",
+      "ibu": 60,
     },
     {
-      "name": "Bud Light Platinum",
-      "style": "Lager",
-      "ibu": 41,
+      "name": "Stout",
+      "style": "Irish Stout",
+      "ibu": 40,
     },
     {
-      "name": "Bud Light Seltzer",
-      "style": "Lager",
-      "ibu": 41,
+      "name": "Weissbier",
+      "style": "Hefeweizen",
+      "ibu": 15,
     },
     {
-      "name": "Bud Light Seltzer Lemonade",
-      "style": "Lager",
-      "ibu": 41,
+      "name": "Belgian Dubbel",
+      "style": "Belgian Dubbel",
+      "ibu": 20,
     },
     {
-      "name": "Bud Light Seltzer Orange",
-      "style": "Lager",
-      "ibu": 41,
+      "name": "Pilsner",
+      "style": "Czech Pilsner",
+      "ibu": 35,
     },
     {
-      "name": "Bud Light Seltzer Raspberry",
-      "style": "Lager",
-      "ibu": 41,
+      "name": "Saison",
+      "style": "Farmhouse Ale",
+      "ibu": 30,
     },
     {
-      "name": "Bud Light Seltzer Strawberry",
-      "style": "Lager",
-      "ibu": 41,
+      "name": "Brown Ale",
+      "style": "English Brown Ale",
+      "ibu": 25,
     },
     {
-      "name": "Bud Light Seltzer Watermelon",
-      "style": "Lager",
-      "ibu": 41,
+      "name": "Dunkel",
+      "style": "Munich Dunkel Lager",
+      "ibu": 18,
     },
     {
-      "name": "Bud Light Seltzer Black Cherry",
-      "style": "Lager",
-      "ibu": 41,
+      "name": "APA",
+      "style": "American Pale Ale",
+      "ibu": 45,
     },
     {
-      "name": "Bud Light Seltzer Black Cherry Lime",
-      "style": "Lager",
-      "ibu": 41,
-    },
-    {
-      "name": "Bud Light Seltzer Black Cherry Lime",
-      "style": "Lager",
-      "ibu": 41,
-    },
-    {
-      "name": "Bud Light Seltzer Black Cherry Lime",
-      "style": "Lager",
-      "ibu": 41,
-    },
-    {
-      "name": "Bud Light Seltzer Black Cherry Lime",
-      "style": "Lager",
-      "ibu": 41,
-    },
-    {
-      "name": "Bud Light Seltzer Black Cherry Lime",
-      "style": "Lager",
-      "ibu": 41,
-    },
+      "name": "Gose",
+      "style": "German Sour Ale",
+      "ibu": 12,
+    }
   ];
+
+  _getKeys() {
+    List<String> keys = _drinks[0].keys.toList();
+    return keys;
+  }
 
   final _buttons = [
     {"label": "Home", "icon": Icons.home},
@@ -152,7 +137,12 @@ class _MyHomePageState extends State<MyHomePage> {
         title: const Text('Dicas'),
         backgroundColor: _appBarColor,
       ),
-      body: ListDrinksTile(drinks: _drinks, icon: Icons.local_drink_outlined),
+      body: ListDrinksTile(
+        objects: _drinks,
+        columnNames: const ["Estilo", "IBU"],
+        propertyNames: _getKeys(),
+        icon: Icons.local_drink_outlined,
+      ),
       bottomNavigationBar: BottomNavbarItems(buttons: _buttons),
     );
   }

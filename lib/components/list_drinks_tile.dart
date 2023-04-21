@@ -1,29 +1,28 @@
 import 'package:flutter/material.dart';
 
-class ListDrinksTile extends StatefulWidget {
-  final List drinks;
+class ListDrinksTile extends StatelessWidget {
+  final List<Map<String, Object>> objects;
+  final List<String> columnNames;
+  final List<String> propertyNames;
   final icon;
 
-  ListDrinksTile({required this.drinks, required this.icon});
-
-  @override
-  State<ListDrinksTile> createState() => _ListDrinksTileState();
-}
-
-class _ListDrinksTileState extends State<ListDrinksTile> {
-  var columnNames = ['Descrição', 'Estilo', 'IBU'];
-  var propertyNames = ['name', 'style', 'ibu'];
+  ListDrinksTile({
+    required this.objects,
+    required this.icon,
+    required this.columnNames,
+    required this.propertyNames,
+  });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        child: widget.drinks.isEmpty
+        child: objects.isEmpty
             ? Center(
                 child: Column(
                   children: <Widget>[
                     const SizedBox(height: 150),
                     const Text(
-                      'Nenhum drink cadastrado',
+                      'Nenhum item cadastrado',
                       style: TextStyle(
                         fontSize: 20,
                       ),
@@ -42,18 +41,20 @@ class _ListDrinksTileState extends State<ListDrinksTile> {
                 ),
               )
             : ListView(
-                children: <Widget>[
-                  ...widget.drinks.map((drink) {
-                    return Card(
-                      child: ListTile(
+                children: [
+                  ...objects.map((object) {
+                    return Column(children: [
+                      ListTile(
                         leading: CircleAvatar(
-                          child: Icon(widget.icon),
+                          child: Icon(icon),
                         ),
-                        title: Text(drink['name']),
-                        subtitle: Text("Estilo: ${drink['style']}"),
-                        trailing: Text("IBU: ${drink['ibu']}"),
+                        title: Text("${object[propertyNames[0].toString()]}"),
+                        subtitle: Text(
+                            "${columnNames[0]}: ${object[propertyNames[1].toString()]}"),
+                        trailing: Text(
+                            "${columnNames[1]}: ${object[propertyNames[2].toString()]}"),
                       ),
-                    );
+                    ]);
                   }).toList(),
                 ],
               ));
