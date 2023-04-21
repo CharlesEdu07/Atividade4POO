@@ -34,6 +34,34 @@ class _MyHomePageState extends State<MyHomePage> {
     Drink(description: "Sapporo Premiume - Sour Ale - 54 ibu"),
     Drink(description: "Duvel - Pilsner - 82 ibu"),
     Drink(description: "Budweiser - Lager - 41 ibu"),
+    Drink(description: "La Fin Du Monde - Bock - 65 ibu"),
+    Drink(description: "Sapporo Premiume - Sour Ale - 54 ibu"),
+    Drink(description: "Duvel - Pilsner - 82 ibu"),
+    Drink(description: "Budweiser - Lager - 41 ibu"),
+    Drink(description: "La Fin Du Monde - Bock - 65 ibu"),
+    Drink(description: "Sapporo Premiume - Sour Ale - 54 ibu"),
+    Drink(description: "Duvel - Pilsner - 82 ibu"),
+    Drink(description: "Budweiser - Lager - 41 ibu"),
+    Drink(description: "La Fin Du Monde - Bock - 65 ibu"),
+    Drink(description: "Sapporo Premiume - Sour Ale - 54 ibu"),
+    Drink(description: "Duvel - Pilsner - 82 ibu"),
+    Drink(description: "Budweiser - Lager - 41 ibu"),
+    Drink(description: "La Fin Du Monde - Bock - 65 ibu"),
+    Drink(description: "Sapporo Premiume - Sour Ale - 54 ibu"),
+    Drink(description: "Duvel - Pilsner - 82 ibu"),
+    Drink(description: "Budweiser - Lager - 41 ibu"),
+    Drink(description: "La Fin Du Monde - Bock - 65 ibu"),
+    Drink(description: "Sapporo Premiume - Sour Ale - 54 ibu"),
+    Drink(description: "Duvel - Pilsner - 82 ibu"),
+    Drink(description: "Budweiser - Lager - 41 ibu"),
+    Drink(description: "La Fin Du Monde - Bock - 65 ibu"),
+    Drink(description: "Sapporo Premiume - Sour Ale - 54 ibu"),
+    Drink(description: "Duvel - Pilsner - 82 ibu"),
+    Drink(description: "Budweiser - Lager - 41 ibu"),
+    Drink(description: "La Fin Du Monde - Bock - 65 ibu"),
+    Drink(description: "Sapporo Premiume - Sour Ale - 54 ibu"),
+    Drink(description: "Duvel - Pilsner - 82 ibu"),
+    Drink(description: "Budweiser - Lager - 41 ibu"),
   ];
 
   final _buttons = [
@@ -60,12 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: const Text('Dicas'),
         backgroundColor: _appBarColor,
       ),
-      body: Center(
-        child: Container(
-          margin: EdgeInsets.all(100),
-          child: ListDrinks(drinks: _drinks),
-        ),
-      ),
+      body: ListDrinks(drinks: _drinks),
       bottomNavigationBar: BottomNavbarItems(buttons: _buttons),
     );
   }

@@ -7,11 +7,51 @@ class ListDrinks extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-        children: drinks.map((drink) {
-      return Expanded(
-        child: Text(drink.description),
-      );
-    }).toList());
+    return SizedBox(
+        child: drinks.isEmpty
+            ? Column(
+                children: <Widget>[
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const Text(
+                    'Nenhuma bebida cadastrada',
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  SizedBox(
+                    height: 200,
+                    child: Image.asset(
+                      'assets/images/waiting.png',
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ],
+              )
+            : ListView(
+              children: [ DataTable(
+                  columns: const <DataColumn>[
+                    DataColumn(
+                      label: Text(
+                        'Descrição',
+                        style: TextStyle(
+                          fontStyle: FontStyle.italic,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
+                  rows: drinks.map((drink) {
+                    return DataRow(
+                      cells: <DataCell>[
+                        DataCell(Text(drink.description)),
+                      ],
+                    );
+                  }).toList(),
+                ),
+              ],
+            ));
+            
   }
 }
