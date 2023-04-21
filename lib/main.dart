@@ -30,38 +30,26 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final _drinks = [
-    Drink(description: "La Fin Du Monde - Bock - 65 ibu"),
-    Drink(description: "Sapporo Premiume - Sour Ale - 54 ibu"),
-    Drink(description: "Duvel - Pilsner - 82 ibu"),
-    Drink(description: "Budweiser - Lager - 41 ibu"),
-    Drink(description: "La Fin Du Monde - Bock - 65 ibu"),
-    Drink(description: "Sapporo Premiume - Sour Ale - 54 ibu"),
-    Drink(description: "Duvel - Pilsner - 82 ibu"),
-    Drink(description: "Budweiser - Lager - 41 ibu"),
-    Drink(description: "La Fin Du Monde - Bock - 65 ibu"),
-    Drink(description: "Sapporo Premiume - Sour Ale - 54 ibu"),
-    Drink(description: "Duvel - Pilsner - 82 ibu"),
-    Drink(description: "Budweiser - Lager - 41 ibu"),
-    Drink(description: "La Fin Du Monde - Bock - 65 ibu"),
-    Drink(description: "Sapporo Premiume - Sour Ale - 54 ibu"),
-    Drink(description: "Duvel - Pilsner - 82 ibu"),
-    Drink(description: "Budweiser - Lager - 41 ibu"),
-    Drink(description: "La Fin Du Monde - Bock - 65 ibu"),
-    Drink(description: "Sapporo Premiume - Sour Ale - 54 ibu"),
-    Drink(description: "Duvel - Pilsner - 82 ibu"),
-    Drink(description: "Budweiser - Lager - 41 ibu"),
-    Drink(description: "La Fin Du Monde - Bock - 65 ibu"),
-    Drink(description: "Sapporo Premiume - Sour Ale - 54 ibu"),
-    Drink(description: "Duvel - Pilsner - 82 ibu"),
-    Drink(description: "Budweiser - Lager - 41 ibu"),
-    Drink(description: "La Fin Du Monde - Bock - 65 ibu"),
-    Drink(description: "Sapporo Premiume - Sour Ale - 54 ibu"),
-    Drink(description: "Duvel - Pilsner - 82 ibu"),
-    Drink(description: "Budweiser - Lager - 41 ibu"),
-    Drink(description: "La Fin Du Monde - Bock - 65 ibu"),
-    Drink(description: "Sapporo Premiume - Sour Ale - 54 ibu"),
-    Drink(description: "Duvel - Pilsner - 82 ibu"),
-    Drink(description: "Budweiser - Lager - 41 ibu"),
+    {
+      "name": "La Fin Du Monde",
+      "style": "Bock",
+      "ibu": 65,
+    },
+    {
+      "name": "Sapporo Premiume",
+      "style": "Sour Ale",
+      "ibu": 54,
+    },
+    {
+      "name": "Duvel",
+      "style": "Pilsner",
+      "ibu": 82,
+    },
+    {
+      "name": "Budweiser",
+      "style": "Lager",
+      "ibu": 41,
+    },
   ];
 
   final _buttons = [

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 class ListDrinks extends StatelessWidget {
   final List drinks;
+  var columnNames = ['Descrição', 'Estilo', 'IBU'];
+  var propertyNames = ['name', 'style', 'ibu'];
 
   ListDrinks({required this.drinks});
 
@@ -30,28 +32,38 @@ class ListDrinks extends StatelessWidget {
                 ],
               )
             : ListView(
-              children: [ DataTable(
-                  columns: const <DataColumn>[
-                    DataColumn(
-                      label: Text(
-                        'Descrição',
-                        style: TextStyle(
-                          fontStyle: FontStyle.italic,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ],
-                  rows: drinks.map((drink) {
-                    return DataRow(
-                      cells: <DataCell>[
-                        DataCell(Text(drink.description)),
-                      ],
-                    );
-                  }).toList(),
-                ),
-              ],
-            ));
-            
+                children: [
+                  DataTable(
+                    columns: columnNames
+                        .map(
+                          (name) => DataColumn(
+                            label: Expanded(
+                              child: Text(
+                                name,
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontStyle: FontStyle.italic,
+                                ),
+                              ),
+                            ),
+                          ),
+                        )
+                        .toList(),
+                    rows: drinks
+                        .map(
+                          (drink) => DataRow(
+                            cells: propertyNames
+                                .map(
+                                  (name) => DataCell(
+                                    Text('${drink[name]}'),
+                                  ),
+                                )
+                                .toList(),
+                          ),
+                        )
+                        .toList(),
+                  )
+                ],
+              ));
   }
 }
