@@ -114,11 +114,9 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   final _buttons = [
-    {"label": "Home", "icon": Icons.home},
-    {"label": "Search", "icon": Icons.search},
-    {"label": "Favorite", "icon": Icons.favorite},
-    {"label": "Profile", "icon": Icons.person},
-    {"label": "Settings", "icon": Icons.settings}
+    {"label": "Coffe", "icon": Icons.coffee_maker},
+    {"label": "Drinks", "icon": Icons.local_drink},
+    {"label": "Nações", "icon": Icons.flag},
   ];
 
   Color _appBarColor = Colors.blue;
