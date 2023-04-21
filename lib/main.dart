@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './models/drinks.dart';
 import './components/list_drinks.dart';
+import './components/list_drinks_tile.dart';
 import './components/bottom_navbar_items.dart';
 import 'components/navbar.dart';
 
@@ -151,7 +152,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: const Text('Dicas'),
         backgroundColor: _appBarColor,
       ),
-      body: ListDrinks(drinks: _drinks),
+      body: ListDrinksTile(drinks: _drinks, icon: Icons.local_drink_outlined),
       bottomNavigationBar: BottomNavbarItems(buttons: _buttons),
     );
   }

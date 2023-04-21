@@ -11,25 +11,28 @@ class ListDrinks extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
         child: drinks.isEmpty
-            ? Column(
-                children: <Widget>[
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  const Text(
-                    'Nenhuma bebida cadastrada',
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  SizedBox(
-                    height: 200,
-                    child: Image.asset(
-                      'assets/images/waiting.png',
-                      fit: BoxFit.cover,
+            ? Center(
+                child: Column(
+                  children: <Widget>[
+                    const SizedBox(height: 150),
+                    const Text(
+                      'Nenhum drink cadastrado',
+                      style: TextStyle(
+                        fontSize: 20,
+                      ),
                     ),
-                  ),
-                ],
+                    const SizedBox(
+                      height: 80,
+                    ),
+                    SizedBox(
+                      height: 200,
+                      child: Image.asset(
+                        'assets/images/waiting.png',
+                        fit: BoxFit.cover,
+                      ),
+                    )
+                  ],
+                ),
               )
             : ListView(
                 children: [
