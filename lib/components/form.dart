@@ -19,7 +19,7 @@ class _FormTestState extends State<FormTest> {
   _submitForm() {
     final enteredName = nameController.text;
     final enteredStyle = styleController.text;
-    final enteredIbu = double.parse(ibuController.text);
+    final enteredIbu = double.tryParse(ibuController.text)?? 0;
 
     if (enteredName.isEmpty || enteredStyle.isEmpty || enteredIbu <= 0) {
       return;
@@ -42,19 +42,16 @@ class _FormTestState extends State<FormTest> {
                   decoration:
                       const InputDecoration(labelText: 'Nome da bebida'),
                   controller: nameController,
-                  onSubmitted: (_) => _submitForm(),
                 ),
                 TextField(
                   decoration: const InputDecoration(labelText: 'Descrição'),
                   controller: styleController,
-                  onSubmitted: (_) => _submitForm(),
                 ),
                 TextField(
                   controller: ibuController,
                   keyboardType:
                       const TextInputType.numberWithOptions(decimal: true),
-                  onSubmitted: (_) => _submitForm(),
-                  decoration: const InputDecoration(labelText: 'Valor (R\$)'),
+                  decoration: const InputDecoration(labelText: 'IBU'),
                 ),
                 const SizedBox(height: 40),
                 const Text(
