@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import './models/drinks.dart';
-import './components/list_drinks.dart';
+import 'components/list_objects.dart';
 import './components/list_drinks_tile.dart';
 import './components/bottom_navbar_items.dart';
 import './components/bottom_navbar_items_2.dart';
@@ -164,10 +164,17 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
       ),
-      body: ListDrinksTile(
-        drinks: _drinks,
-        icon: Icons.local_drink_outlined,
-      ),
+      body:
+        ListDrinksTile(
+          drinks: _drinks,
+          icon: Icons.local_drink_outlined,
+        ),
+        // ListObjects(
+        //   objects: _drinks,
+        //   propertyNames: const ["name", "style", "ibu"],
+        //   columnNames: const ["Nome", "Estilo", "IBU"],
+        // ),
+
       bottomNavigationBar: BottomNavbarItems(buttons: _buttons),
     );
   }
