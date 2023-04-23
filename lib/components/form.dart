@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class FormTest extends StatefulWidget {
   final void Function(String, String, double) onSubmit;
 
-  FormTest({required this.onSubmit, super.key});
+  const FormTest({required this.onSubmit, super.key});
 
   @override
   State<FormTest> createState() => _FormTestState();
@@ -56,14 +56,14 @@ class _FormTestState extends State<FormTest> {
                   onSubmitted: (_) => _submitForm(),
                   decoration: const InputDecoration(labelText: 'Valor (R\$)'),
                 ),
-                SizedBox(height: 40),
+                const SizedBox(height: 40),
                 const Text(
                   "Qual a marca da bebida?",
                   style: TextStyle(fontSize: 16),
                   textAlign: TextAlign.left,
                 ),
                 RadioListTile(
-                  title: Text("Skol"),
+                  title: const Text("Skol"),
                   value: "Skol",
                   groupValue: brandController,
                   onChanged: (value) {
@@ -73,7 +73,7 @@ class _FormTestState extends State<FormTest> {
                   },
                 ),
                 RadioListTile(
-                  title: Text("Brahma"),
+                  title: const Text("Brahma"),
                   value: "Brahma",
                   groupValue: brandController,
                   onChanged: (value) {
@@ -83,7 +83,7 @@ class _FormTestState extends State<FormTest> {
                   },
                 ),
                 RadioListTile(
-                  title: Text("Antarctica"),
+                  title: const Text("Antarctica"),
                   value: "Antarctica",
                   groupValue: brandController,
                   onChanged: (value) {
@@ -93,7 +93,7 @@ class _FormTestState extends State<FormTest> {
                   },
                 ),
                 RadioListTile(
-                  title: Text("Budweiser"),
+                  title: const Text("Budweiser"),
                   value: "Budweiser",
                   groupValue: brandController,
                   onChanged: (value) {
@@ -102,14 +102,14 @@ class _FormTestState extends State<FormTest> {
                     });
                   },
                 ),
-                SizedBox(height: 40),
-                Text("IBU: ${ibu?.round()}"),
+                const SizedBox(height: 40),
+                Text("IBU: ${ibu.round()}"),
                 Slider(
-                  value: ibu ?? 0,
+                  value: ibu,
                   min: 0,
                   max: 100,
                   divisions: 10,
-                  label: ibu?.round().toString(),
+                  label: ibu.round().toString(),
                   onChanged: (value) {
                     setState(() {
                       ibu = value;
