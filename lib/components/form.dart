@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class FormTest extends StatefulWidget {
   final void Function(String, String, double) onSubmit;
 
-  const FormTest({required this.onSubmit, super.key});
+  FormTest({required this.onSubmit, super.key});
 
   @override
   State<FormTest> createState() => _FormTestState();
