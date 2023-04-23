@@ -10,13 +10,13 @@ class BottomNavbarItems extends HookWidget {
   Widget build(BuildContext context) {
     print("Build da classe: " + this.toStringShort());
 
-    var _selectedIndex = useState(1);
+    var selectedIndex = useState(1);
 
     return BottomNavigationBar(
       onTap: (index) {
-        _selectedIndex.value = index;
+        selectedIndex.value = index;
       },
-      currentIndex: _selectedIndex.value,
+      currentIndex: selectedIndex.value,
       type: BottomNavigationBarType.fixed,
       items: buttons
           .map(
