@@ -14,7 +14,7 @@ class _FormTestState extends State<FormTest> {
   final styleController = TextEditingController();
   final ibuController = TextEditingController();
   String? brandController;
-  double? ibu;
+  double ibu = 0;
 
   _submitForm() {
     final enteredName = nameController.text;
