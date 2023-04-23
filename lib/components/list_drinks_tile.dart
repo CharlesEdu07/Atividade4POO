@@ -11,6 +11,7 @@ class ListDrinksTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("Build da classe: " + this.toStringShort());
     return SizedBox(
         child: drinks.isEmpty
             ? Center(

@@ -8,6 +8,7 @@ class Navbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("Build da classe: " + this.toStringShort());
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,

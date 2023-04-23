@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import './models/drinks.dart';
 import './components/list_drinks.dart';
 import './components/list_drinks_tile.dart';
-import './components/bottom_navbar_items.dart';
+import 'components/bottom_navbar_items.dart';
+import 'components/bottom_navbar_items_2.dart';
 import 'components/navbar.dart';
 
 void main() {
@@ -25,6 +27,8 @@ class TipsApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
@@ -107,11 +111,6 @@ class _MyHomePageState extends State<MyHomePage> {
       "ibu": 12,
     }
   ];
-
-  _getKeys() {
-    List<String> keys = _drinks[0].keys.toList();
-    return keys;
-  }
 
   final _buttons = [
     {"label": "Coffe", "icon": Icons.coffee_maker},
