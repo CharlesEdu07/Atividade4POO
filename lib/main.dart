@@ -3,9 +3,10 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import './models/drinks.dart';
 import './components/list_drinks.dart';
 import './components/list_drinks_tile.dart';
-import 'components/bottom_navbar_items.dart';
-import 'components/bottom_navbar_items_2.dart';
-import 'components/navbar.dart';
+import './components/bottom_navbar_items.dart';
+import './components/bottom_navbar_items_2.dart';
+import './components/navbar.dart';
+import './components/form.dart';
 
 void main() {
   runApp(const TipsApp());
@@ -126,6 +127,29 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void _addDrink(String name, String style, double ibu) {
+    final newDrink = {
+      "name": name,
+      "style": style,
+      "ibu": ibu,
+    };
+
+    setState(() {
+      _drinks.add(newDrink);
+    });
+
+    Navigator.of(context).pop();
+  }
+
+  void _openFormModal(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      builder: (_) {
+        return FormTest(onSubmit: _addDrink);
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -133,6 +157,12 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: const Text('Dicas'),
         backgroundColor: _appBarColor,
+        actions: [
+          IconButton(
+            onPressed: () => _openFormModal(context),
+            icon: const Icon(Icons.add),
+          ),
+        ],
       ),
       body: ListDrinksTile(
         drinks: _drinks,
