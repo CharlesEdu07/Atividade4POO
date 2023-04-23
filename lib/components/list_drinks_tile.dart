@@ -1,22 +1,18 @@
 import 'package:flutter/material.dart';
 
 class ListDrinksTile extends StatelessWidget {
-  final List<Map<String, Object>> objects;
-  final List<String> columnNames;
-  final List<String> propertyNames;
+  final List<Map<String, Object>> drinks;
   final icon;
 
   ListDrinksTile({
-    required this.objects,
+    required this.drinks,
     required this.icon,
-    required this.columnNames,
-    required this.propertyNames,
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        child: objects.isEmpty
+        child: drinks.isEmpty
             ? Center(
                 child: Column(
                   children: <Widget>[
@@ -40,23 +36,21 @@ class ListDrinksTile extends StatelessWidget {
                   ],
                 ),
               )
-            : ListView(
-                children: [
-                  ...objects.map((object) {
-                    return Column(children: [
-                      ListTile(
-                        leading: CircleAvatar(
-                          child: Icon(icon),
-                        ),
-                        title: Text("${object[propertyNames[0].toString()]}"),
-                        subtitle: Text(
-                            "${columnNames[0]}: ${object[propertyNames[1].toString()]}"),
-                        trailing: Text(
-                            "${columnNames[1]}: ${object[propertyNames[2].toString()]}"),
+            : ListView.builder(
+                itemCount: drinks.length,
+                itemBuilder: (ctx, index) {
+                  return Card(
+                    child: ListTile(
+                      leading: CircleAvatar(
+                        child: Icon(icon),
                       ),
-                    ]);
-                  }).toList(),
-                ],
-              ));
+                      title: Text(drinks[index]['name'].toString()),
+                      subtitle: Text(drinks[index]['style'].toString()),
+                      trailing: Text(drinks[index]['ibu'].toString()),
+                    ),
+                  );
+                },
+              )
+            );
   }
 }

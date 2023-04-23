@@ -136,9 +136,7 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: _appBarColor,
       ),
       body: ListDrinksTile(
-        objects: _drinks,
-        columnNames: const ["Estilo", "IBU"],
-        propertyNames: _getKeys(),
+        drinks: _drinks,
         icon: Icons.local_drink_outlined,
       ),
       bottomNavigationBar: BottomNavbarItems(buttons: _buttons),
